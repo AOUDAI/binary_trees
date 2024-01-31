@@ -8,16 +8,12 @@
  */
 void binary_tree_delete(binary_tree_t *tree)
 {
-	binary_tree_t *left_subtree, *right_subtree;
 
 
 	if (tree != NULL)
 	{
-		left_subtree = tree->left;
-		right_subtree = tree->right;
+		binary_tree_delete(tree->left);
+		binary_tree_delete(tree->right);
 		free(tree);
-
-		binary_tree_delete(left_subtree);
-		binary_tree_delete(right_subtree);
 	}
 }
