@@ -28,8 +28,8 @@ int is_complete(const binary_tree_t *tree, size_t level,
 		return (1);
 	}
 
-	/*if (binary_tree_height(tree->left) < binary_tree_height(tree->right))
-		return (0);*/
+	if (binary_tree_height(tree->left) < binary_tree_height(tree->right))
+		return (0);
 
 	if (!tree->left && !tree->right)
 		return (1);
